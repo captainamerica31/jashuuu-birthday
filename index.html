@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy Birthday Jashu 🎂</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+<!-- background music -->
+<audio id="bgMusic" src="./birthday.mp3" loop></audio>
+<button id="musicToggle" onclick="toggleMusic()">🔇 Music Off</button>
+
+<div class="container">
+
+  <!-- SECTION 1 -->
+  <section class="card active">
+    <h1>🎂 Happy Birthday Jashuu 💖🎂</h1>
+    <p>
+      Meri pyaari behen 💕  
+      Aaj ka din sirf tumhare naam.
+      Ye chhoti si website sirf isliye —  
+      kyunki tum mere liye bohot special ho 🧸
+    </p>
+    <button onclick="startJourney()">Start 🎀</button>
+  </section>
+
+  <!-- SECTION 2 -->
+  <section class="card">
+    <h2>🌸 Meri Behen</h2>
+    <p>
+      Jashu, tum sirf meri behen nahi ho,  
+      tum meri strength ho, meri support ho.  
+      Jab bhi main low feel karta hoon,  
+      tumhara ek message bhi kaafi hota hai.
+      Tumhari simplicity aur care sabse pyaari hai 🤍, 
+      Duniya kuch bhi kahe, tum hamesha meri priority rahogi 💕
+    </p>
+    <button onclick="nextSection()">Next 🧁</button>
+  </section>
+
+  <!-- SECTION 3 -->
+  <section class="card">
+    <h2>🧸 Thank You</h2>
+    <p>
+      Thank you meri life mein hone ke liye.  
+      Thank you har baar samajhne ke liye.  
+      Thank you meri har chhoti-badi baat sunne ke liye.  
+      Bhagwan tumhe hamesha khush rakhe 🌈
+    </p>
+    <button onclick="nextSection()">Memories 📸</button>
+  </section>
+
+  <!-- PHOTOS -->
+  <section class="card">
+    <h2>📸 Cute Memories</h2>
+    <p>(Jashu photo pe click kar 😄)</p>
+
+    <div class="photo-grid">
+      <script>
+        for (let i = 1; i <= 15; i++) {
+          let back = i + 15;
+          document.write(`
+            <div class="flip-card">
+              <div class="flip-inner">
+                <div class="flip-front">
+                  <img src="./jashu${i}.jpeg">
+                </div>
+                <div class="flip-back">
+                  <img src="./jashu${back}.jpeg">
+                </div>
+              </div>
+            </div>
+          `);
+        }
+      </script>
+    </div>
+
+    <button onclick="nextSection()">Videos 🎥</button>
+  </section>
+
+  <!-- VIDEOS -->
+  <section class="card">
+    <h2>🎬 Kuch Beautiful Moment Ki Clips</h2>
+
+    <div class="videos">
+      <video src="./jashu1.mp4" controls onclick="playOnce(this)"></video>
+      <video src="./jashu2.mp4" controls onclick="playOnce(this)"></video>
+      <video src="./jashu3.mp4" controls onclick="playOnce(this)"></video>
+    </div>
+
+    <div class="voice-note">
+      <h3>🎧 Chhoti si wish tere liye </h3>
+      <p>Sunna jroor</p>
+      <audio id="voiceAudio" src="./goodbye.mp3"></audio>
+      <button id="voiceBtn" onclick="toggleVoice()">▶️ Play Voice</button>
+      <div id="voiceWave" class="voice-wave">
+        <span></span><span></span><span></span><span></span><span></span>
+      </div>
+    </div>
+
+    <button onclick="nextSection()">Final 🎁</button>
+  </section>
+
+  <!-- HUB -->
+  <section class="card">
+    <h2>💫 Little Things For You</h2>
+    <p>Ek-Ek karke sabko open kar 🤌🤍</p>
+    <div class="hub-grid">
+      <button onclick="openMini(1)">1 🌷</button>
+      <button onclick="openMini(2)">2 🧠</button>
+      <button onclick="openMini(3)">3 📖</button>
+      <button onclick="openMini(4)">4 🧩</button>
+      <button onclick="openMini(5)">5 🛡️</button>
+      <button onclick="openMini(6)">6 🎧</button>
+      <button onclick="openMini(7)">7 🤍</button>
+    </div>
+    <button onclick="goToFinal()">Go to Final Page 💌</button>
+  </section>
+
+  <section class="mini" id="mini1">
+    <h3>🌷 Why You Matter</h3>
+    <p>Tumhari presence hi kaafi hoti hai.</p>
+    <button onclick="closeMini()">Back</button>
+  </section>
+
+  <section class="mini" id="mini2">
+    <h3>🧠 I Admire</h3>
+    <p>Tumhara patience, tumhari simplicity.</p>
+    <p>Tum strong ho, bina dikhaye.</p>
+    <p></p>Aur shayad isi liye sabse alag ho 🌸</p>
+    <button onclick="closeMini()">Back</button>
+  </section>
+
+  <section class="mini" id="mini3">
+    <h3>📖 Little Moments</h3>
+    <p>Wo baatein jo bina bole samajh aati hain.</p>
+    <button onclick="closeMini()">Back</button>
+  </section>
+
+  <section class="mini" id="mini4">
+    <h3>🧩 What I Learned</h3>
+    <p>Strong rehna, shor ke bina.</p>
+    <button onclick="closeMini()">Back</button>
+  </section>
+
+  <section class="mini" id="mini5">
+    <h3>🛡️ Silent Warrior</h3>
+    <p>Sabse zyada ladne wale chup hote hain.</p>
+    <button onclick="closeMini()">Back</button>
+  </section>
+
+  <section class="mini" id="mini6">
+    <h3>🎧 Just Listen</h3>
+    <audio controls src="./goodbye.mp3"></audio>
+    <button onclick="closeMini()">Back</button>
+  </section>
+
+  <section class="mini" id="mini7">
+    <h3>🤍 Always</h3>
+    <p>Main hamesha yahin hoon.
+    <p>Sawal nahi, condition nahi.</p>
+    <p>Bas hoon.</p>
+    <p>Tumhare saath. Hamesha 🤍</p>
+    <button onclick="closeMini()">Back</button>
+  </section>
+
+  <!-- FINAL -->
+  <section class="card final">
+    <h2>💖 One Last Thing</h2>
+    <p>
+      Agar tum chaaho, to apni ek chhoti si wish yahan likh sakti ho ✨  
+      Ye wish sirf tumhare bhai tak pahunchegi 🤍
+    </p>
+
+    <form 
+      action="https://formspree.io/f/mgoznlbb" 
+      method="POST"
+      target="hidden_iframe"
+    >
+
+  <textarea
+    name="wish"
+    id="wishText"
+    placeholder="Apni wish yahan likho... 💌"
+    required>
+  </textarea>
+
+  <input type="hidden" name="from" value="Jashu 💖">
+  <input type="hidden" name="_redirect" value="false">
+
+  <br>
+
+  <button class="heart-btn" type="submit">
+    💖 Send to Bhai 💌
+  </button>
+
+</form>
+<iframe name="hidden_iframe" style="display:none;"></iframe>
+
+<p id="wishMsg" style="display:none; margin-top:20px; color:#d63384;">
+  ✨ Teri wish aa gai mere pass 😁🤍
+</p>
+
+    <h3 style="margin-top:30px;">— Tumhara Bhaiiii Kailash 🫂💫</h3>
+  </section>
+
+</div>
+
+<!-- DECORATIONS -->
+<div class="soft-glow"></div>
+<div class="hearts"></div>
+<div class="confetti">
+  <span style="left:10%"></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
+
+<script>
+    const music = document.getElementById("bgMusic");
+    const musicBtn = document.getElementById("musicToggle");
+    let isPlaying = false;
+
+    function toggleMusic() {
+      if (!isPlaying) {
+        music.play();
+        musicBtn.innerText = "🔊 Music On";
+        isPlaying = true;
+      } else {
+        music.pause();
+        musicBtn.innerText = "🔇 Music Off";
+        isPlaying = false;
+      }
+    }
+
+    // section navigation logic
+    let currentSection = 0;
+    const sections = document.querySelectorAll(".card");
+
+    function startJourney() {
+      sections[currentSection].classList.remove("active");
+      currentSection = 1;
+      sections[currentSection].classList.add("active");
+    }
+
+    function nextSection() {
+      sections[currentSection].classList.remove("active");
+      currentSection++;
+      if (currentSection < sections.length) {
+        sections[currentSection].classList.add("active");
+      }
+    }
+
+    function sendWish() {
+      const wish = document.getElementById("wishText").value.trim();
+      if (wish === "") {
+        alert("Pehle apni wish likho 💖");
+        return;
+      }
+
+      document.getElementById("wishMsg").style.display = "block";
+      document.querySelector(".confetti").classList.add("blast");
+      document.getElementById("wishText").value = "";
+    }
+
+    const voiceAudio = document.getElementById("voiceAudio");
+    const voiceBtn = document.getElementById("voiceBtn");
+    const voiceWave = document.getElementById("voiceWave");
+
+    function toggleVoice() {
+      if (voiceAudio.paused) {
+        // pause background music if playing
+        if (isPlaying) {
+          music.pause();
+          musicBtn.innerText = "🔇 Music Off";
+          isPlaying = false;
+        }
+        voiceAudio.play();
+        voiceBtn.innerText = "⏸️ Pause Voice";
+        voiceWave.classList.add("active");
+      } else {
+        voiceAudio.pause();
+        voiceBtn.innerText = "▶️ Play Voice";
+        voiceWave.classList.remove("active");
+      }
+    }
+
+    voiceAudio.addEventListener("ended", () => {
+      voiceBtn.innerText = "▶️ Play Voice";
+      voiceWave.classList.remove("active");
+    });
+  </script>
+<style>
+  #musicToggle{
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    background: rgba(255, 182, 193, 0.9);
+    border: none;
+    border-radius: 25px;
+    padding: 8px 14px;
+    font-size: 14px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    z-index: 999;
+  }
+</style>
+<script src="./script.js" defer></script>
+</body>
+</html>
